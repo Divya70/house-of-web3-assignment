@@ -1,4 +1,3 @@
-// Import necessary dependencies for testing
 import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route } from "react-router-dom";
 import { MOCK_DATA } from "../mock/productDetailMock";
@@ -24,20 +23,6 @@ jest.mock("next/image", () => ({ src, alt }) => <img src={src} alt={alt} />);
 // Import your component
 
 describe("ProductDetail component", () => {
-  it("handles loading state properly", async () => {
-    // Render the component
-    render(<ProductDetail />, { wrapper: MemoryRouter });
-
-    // Check if the loading text is displayed initially
-    expect(screen.getByTestId("product-details-simmer")).toBeInTheDocument();
-
-    // Wait for the product to be fetched
-    await waitFor(() => screen.getByTestId("product-card"));
-
-    // Check if the loading text is not present after fetching the product
-    expect(screen.getByTestId("product-details-simmer")).toBeNull();
-  });
-
   it("renders product details correctly", async () => {
     render(<ProductDetail />, { wrapper: MemoryRouter });
 

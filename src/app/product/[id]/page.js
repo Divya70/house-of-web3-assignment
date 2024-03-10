@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ProductDetailsSimmerUI from "@/app/components/ProductDetailsSimmerUI";
+// import ProductDetailsSimmerUI from "@/app/components/ProductDetailsSimmerUI";
+import ProductDetailsSimmerUI from "../../components/ProductDetailsSimmerUI";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const ProductDetail = () => {
   }, [id]);
 
   if (!product) {
-    return <ProductDetailsSimmerUI />;
+    return <ProductDetailsSimmerUI data-testid="product-details-simmer" />;
   }
 
   return (

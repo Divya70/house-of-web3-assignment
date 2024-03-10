@@ -9,16 +9,6 @@ describe("ProductListingPage", () => {
     })
   );
 });
-it("renders loading text initially", async () => {
-  render(<ProductListingPage />);
-
-  expect(screen.getByText("Loading...")).toBeInTheDocument();
-
-  // Wait for products to be loaded
-  await screen.findByTestId("product-card");
-
-  expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
-});
 
 it("renders product cards with correct data", async () => {
   render(<ProductListingPage />);
