@@ -42,7 +42,7 @@ const ProductDetail = () => {
             objectFit="cover"
           />
         </motion.div>
-        <div className="md:ml-8 mt-4 md:mt-0">
+        <div className="md:ml-8 mt-4">
           <h1 className="text-3xl font-bold">{product?.title}</h1>
           <p>{product?.category}</p>
           <p className="text-gray-600">${product?.price}</p>
